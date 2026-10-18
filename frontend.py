@@ -2,7 +2,21 @@ import streamlit as st
 import pandas as pd
 import requests
 from mappings import list_cpu, list_gpu
+import subprocess
+import sys
+import time
+import socket
+@st.cache_resource
+def start_backend():
+    # Check if port 8000 is already running
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        if s.connect_ex(("127.0.0.1", 8000)) != 0:
+            subprocess.Popen(
+                [sys.executable, "-m", "uvicorn", "main:app", "--host", "127.0.0.1", "--port", "8000"]
+            )
+            time.sleep(3)  # Wait for FastAPI to load the joblib model
 
+start_backend()
 
 # FastAPI Backend Endpoint
 FASTAPI_URL = "http://127.0.0.1:8000/predict"
