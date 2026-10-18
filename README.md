@@ -68,6 +68,7 @@ Laptop-Price-Predictor/
 ├── Dirty.csv               # Raw scraped dataset
 ├── clean_data.csv          # Cleaned, feature-engineered dataset
 ├── laptop_pipe.joblib      # Serialized trained pipeline
+├── requirements.txt        # Python dependencies
 ├── LICENSE
 └── README.md
 ```
@@ -85,8 +86,7 @@ cd Laptop-Price-Predictor
 python -m venv .venv
 source .venv/bin/activate      # Windows: .venv\Scripts\activate
 
-pip install fastapi uvicorn streamlit requests joblib \
-            pandas numpy scikit-learn pydantic
+pip install -r requirements.txt
 ```
 
 ---
