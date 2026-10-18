@@ -1,0 +1,19 @@
+# Core runtime
+fastapi==0.142.2
+uvicorn==0.54.0
+streamlit==1.66.0
+requests==2.34.2
+
+# Validation
+pydantic==2.13.5
+
+# Machine learning
+scikit-learn==1.9.1
+joblib==1.6.0
+
+# Data processing
+pandas==3.0.5
+numpy==2.5.3
+
+# Data scraping (used by flipkart.ipynb)
+beautifulsoup4==4.15.0
